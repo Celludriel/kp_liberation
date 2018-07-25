@@ -4,8 +4,8 @@ Needed Mods:
 - RHS USAF
 
 Optional Mods:
-- F/A-18
 - F-15C
+- F/A-18
 */
 
 /* - Support classnames.
@@ -17,10 +17,10 @@ Arsenal_typename = "B_supplyCrate_F";									// This is the virtual arsenal as 
 Respawn_truck_typename = "rhsusf_M1085A1P2_B_WD_Medical_fmtv_usarmy";	// This is the mobile respawn (and medical) truck. 																						Default is "B_Truck_01_medical_F".
 huron_typename = "RHS_CH_47F";											// This is Spartan 01, a multipurpose mobile respawn as a helicopter. 																	Default is "B_Heli_Transport_03_unarmed_F".
 crewman_classname = "BWA3_Crew_Fleck";									// This defines the crew for vehicles. 																									Default is "B_crew_F".
-pilot_classname = "rhsusf_army_ucp_helipilot";							// This defines the pilot for helicopters. 																								Default is "B_Helipilot_F".
+pilot_classname = "BWA3_Helipilot";										// This defines the pilot for helicopters. 																								Default is "B_Helipilot_F".
 KP_liberation_little_bird_classname = "RHS_MELB_MH6M";					// These are the little birds which spawn on the Freedom or at Chimera base.															Default is "B_Heli_Light_01_F".
 KP_liberation_boat_classname = "B_Boat_Transport_01_F"; 				// These are the boats which spawn at the stern of the Freedom.																			Default is "B_Boat_Transport_01_F".
-KP_liberation_truck_classname = "rhsusf_M977A4_BKIT_usarmy_wd";				// These are the trucks which are used in the logistic convoy system.																Default is "B_Truck_01_transport_F".
+KP_liberation_truck_classname = "rhsusf_M977A4_BKIT_usarmy_wd";			// These are the trucks which are used in the logistic convoy system.																Default is "B_Truck_01_transport_F".
 KP_liberation_small_storage_building = "ContainmentArea_02_sand_F";		// A small storage area for resources.																									Default is "ContainmentArea_02_sand_F".
 KP_liberation_large_storage_building = "ContainmentArea_01_sand_F";		// A large storage area for resources.																									Default is "ContainmentArea_01_sand_F".
 KP_liberation_recycle_building = "Land_CarService_F";					// The building defined to unlock FOB recycling functionality.																			Default is "Land_CarService_F".
@@ -58,9 +58,8 @@ infantry_units = [
 	["BWA3_SniperG82_Fleck",70,5,0],									//Sniper
 	["BWA3_Spotter_Fleck",20,0,0],										//Spotter
 	["BWA3_Crew_Fleck",10,0,0],											//Crewman
-	["rhsusf_army_ucp_rifleman_101st",20,0,0],							//Para Trooper
-	["rhsusf_army_ucp_helicrew",10,0,0],								//Helicopter Crew
-	["rhsusf_army_ucp_helipilot",10,0,0],								//Helicopter Pilot
+	["rhsusf_army_ocp_rifleman_101st",20,0,0],							//Para Trooper
+	["BWA3_Helipilot",10,0,0],											//Helicopter Pilot
 	["rhsusf_airforce_jetpilot",10,0,0]									//Pilot
 ];
 
@@ -73,11 +72,18 @@ light_vehicles = [
 	["rhsusf_m998_w_2dr_halftop",100,0,50],								//M1097A2 (2D / open back)
 	["BWA3_Eagle_Fleck",100,0,50],										//Eagle IV
 	["BWA3_Eagle_FLW100_Fleck",100,100,50],								//Eagle IV (FLW 100)
+	["rhsusf_M1220_usarmy_wd",120,0,60],								//M1220
+	["rhsusf_M1220_M2_usarmy_wd",120,40,60],							//M1220 (M2)
+	["rhsusf_M1220_MK19_usarmy_wd",120,60,60],							//M1220 (Mk19)
+	["rhsusf_M1232_usarmy_wd",140,0,60],								//M1232
+	["rhsusf_M1232_M2_usarmy_wd",140,40,60],							//M1232 (M2)
+	["rhsusf_M1232_MK19_usarmy_wd",140,60,60],							//M1232 (Mk19)
 	["rhsusf_M1230a1_usarmy_wd",120,0,60],								//M1230A1 (MEDEVAC)
-	["rhsusf_M1083A1P2_wd_fmtv_usarmy",125,0,75],						//M1083A1P2 (covered infantry truck)
-	["rhsusf_M1083A1P2_wd_open_fmtv_usarmy",125,0,75],					//M1083A1P2 (open infantry truck)
-	["rhsusf_M977A4_BKIT_usarmy_wd",125,0,75],							//M977A4 BKIT (cargo truck)
-	["rhsusf_M977A4_BKIT_M2_usarmy_wd",125,40,75],						//M977A4 BKIT (cargo truck with HMG)
+	["rhsusf_M1083A1P2_wd_open_fmtv_usarmy",125,0,75],					//M1083A1P2 Transport
+	["rhsusf_M1083A1P2_wd_fmtv_usarmy",125,0,75],						//M1083A1P2 Transport (Covered)
+	["rhsusf_M1083A1P2_WD_flatbed_fmtv_usarmy",100,0,50],				//M1083A1P2
+	["rhsusf_M977A4_BKIT_usarmy_wd",125,0,75],							//M977A4 BKIT 
+	["rhsusf_M977A4_BKIT_M2_usarmy_wd",125,40,75],						//M977A4 BKIT (HMG)
 	["B_UGV_01_F",150,0,50],											//UGV Stomper
 	["B_UGV_01_rcws_F",150,40,50],										//UGV Stomper (RCWS)
 	["B_Boat_Transport_01_F",100,0,25],									//Assault Boat
@@ -246,17 +252,6 @@ support_vehicles = [
 	["B_Slingload_01_Ammo_F",75,200,0]									//Huron Ammo
 ];
 
-// All the UAVs must be declared here, otherwise there shall be UAV controlling issues. Namely: you won't be able to control them.
-uavs = [
-	"B_UAV_01_F",														//AR-2 Darter
-	"B_UGV_01_F",														//UGV Stomper
-	"B_UGV_01_rcws_F",													//UGV Stomper (RCWS)
-	"B_UAV_02_dynamicLoadout_F",										//MQ-4A Greyhawk
-	"B_T_UAV_03_dynamicLoadout_F",										//MQ-12 Falcon
-	"B_UAV_05_F",														//UCAV Sentinel
-	"B_UAV_06_F"														//AL-6 Pelican
-];
-
 // Pre-made squads for the commander build menu. These shouldn't exceed 10 members.
 // Light infantry squad.
 blufor_squad_inf_light = [
@@ -320,22 +315,22 @@ blufor_squad_recon = [
 	"BWA3_recon_Marksman_Fleck",
 	"BWA3_SniperG82_Fleck",
 	"BWA3_Spotter_Fleck",
-	"BWA3_CombatLifeSaver_Fleck",
-	"BWA3_Engineer_Fleck"
+	"BWA3_recon_Medic_Fleck",
+	"BWA3_recon_Pioneer_Fleck"
 ];
 
 // Paratroopers squad.
 blufor_squad_para = [
-	"rhsusf_army_ucp_rifleman_101st",
-	"rhsusf_army_ucp_rifleman_101st",
-	"rhsusf_army_ucp_rifleman_101st",
-	"rhsusf_army_ucp_rifleman_101st",
-	"rhsusf_army_ucp_rifleman_101st",
-	"rhsusf_army_ucp_rifleman_101st",
-	"rhsusf_army_ucp_rifleman_101st",
-	"rhsusf_army_ucp_rifleman_101st",
-	"rhsusf_army_ucp_rifleman_101st",
-	"rhsusf_army_ucp_rifleman_101st"
+	"rhsusf_army_ocp_rifleman_101st",
+	"rhsusf_army_ocp_rifleman_101st",
+	"rhsusf_army_ocp_rifleman_101st",
+	"rhsusf_army_ocp_rifleman_101st",
+	"rhsusf_army_ocp_rifleman_101st",
+	"rhsusf_army_ocp_rifleman_101st",
+	"rhsusf_army_ocp_rifleman_101st",
+	"rhsusf_army_ocp_rifleman_101st",
+	"rhsusf_army_ocp_rifleman_101st",
+	"rhsusf_army_ocp_rifleman_101st"
 ];
 
 // Elite vehicles that should be unlocked through military base capture.

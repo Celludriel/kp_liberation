@@ -4,9 +4,9 @@ Needed Mods:
 
 Optional Mods:
 - BWMod
-- F/A-18
-- F-15C
 - RHSUSAF
+- F-15C
+- F/A-18
 */
 
 /* - Support classnames.
@@ -72,6 +72,7 @@ light_vehicles = [
 	["B_Quadbike_01_F",50,0,25],										//Quad Bike
 	["B_LSV_01_unarmed_F",75,0,50],										//Prowler
 	["B_LSV_01_armed_F",75,40,50],										//Prowler (HMG)
+	["B_LSV_01_AT_F",75,60,50],											//Prowler (AT)
 	["B_MRAP_01_F",100,0,50],											//Hunter
 	["B_MRAP_01_hmg_F",100,40,50],										//Hunter (HMG)
 	["B_MRAP_01_gmg_F",100,60,50],										//Hunter (GMG)
@@ -83,15 +84,23 @@ light_vehicles = [
 	["rhsusf_m1025_w_mk19",100,60,50],									//M1025A2 (Mk19)
 	["rhsusf_m998_w_2dr_fulltop",100,0,50],								//M1097A2 (2D)
 	["rhsusf_m998_w_2dr_halftop",100,0,50],								//M1097A2 (2D / open back)
+	["rhsusf_M1220_usarmy_wd",120,0,60],								//M1220
+	["rhsusf_M1220_M2_usarmy_wd",120,40,60],							//M1220 (M2)
+	["rhsusf_M1220_MK19_usarmy_wd",120,60,60],							//M1220 (Mk19)
+	["rhsusf_M1232_usarmy_wd",140,0,60],								//M1220
+	["rhsusf_M1232_M2_usarmy_wd",140,40,60],							//M1220 (M2)
+	["rhsusf_M1232_MK19_usarmy_wd",140,60,60],							//M1220 (Mk19)
 	["BWA3_Eagle_Fleck",100,0,50],										//Eagle IV
 	["BWA3_Eagle_FLW100_Fleck",100,100,50],								//Eagle IV (FLW 100)
 	["rhsusf_M1230a1_usarmy_wd",120,0,60],								//M1230A1 (MEDEVAC)
 	["B_Truck_01_transport_F",125,0,75],								//HEMTT Transport
 	["B_Truck_01_covered_F",125,0,75],									//HEMTT Transport (Covered)
-	["rhsusf_M1083A1P2_wd_fmtv_usarmy",125,0,75],						//M1083A1P2 (covered infantry truck)
-	["rhsusf_M1083A1P2_wd_open_fmtv_usarmy",125,0,75],					//M1083A1P2 (open infantry truck)
-	["rhsusf_M977A4_BKIT_usarmy_wd",125,0,75],							//M977A4 BKIT (cargo truck)
-	["rhsusf_M977A4_BKIT_M2_usarmy_wd",125,40,75],						//M977A4 BKIT (cargo truck with HMG)
+	["rhsusf_M1083A1P2_wd_open_fmtv_usarmy",125,0,75],					//M1083A1P2 Transport
+	["rhsusf_M1083A1P2_wd_fmtv_usarmy",125,0,75],						//M1083A1P2 Transport (Covered)
+	["rhsusf_M1083A1P2_WD_flatbed_fmtv_usarmy",100,0,50],				//M1083A1P2
+	["rhsusf_M977A4_BKIT_usarmy_wd",125,0,75],							//M977A4 BKIT 
+	["rhsusf_M977A4_BKIT_M2_usarmy_wd",125,40,75],						//M977A4 BKIT (HMG)
+	["rhsusf_M1117_W",150,50,50],										//M1117 ASV
 	["B_UGV_01_F",150,0,50],											//UGV Stomper
 	["B_UGV_01_rcws_F",150,40,50],										//UGV Stomper (RCWS)
 	["B_Boat_Transport_01_F",100,0,25],									//Assault Boat
@@ -104,6 +113,7 @@ heavy_vehicles = [
 	["rhsusf_m113_usarmy",200,40,100],									//M113A3 (M2)
 	["rhsusf_m113_usarmy_MK19",200,60,100],								//M113A3 (Mk19)
 	["rhsusf_m113_usarmy_medical",200,0,100],							//M113A3 (Medical)
+	["I_LT_01_scout_F",200,0,125],										//AWC 302 Nyx (AA)
 	["B_APC_Wheeled_01_cannon_F",200,75,125],							//AMV-7 Marshall
 	["I_APC_Wheeled_03_cannon_F",200,75,125],							//AFV-4 Gorgon
 	["B_APC_Tracked_01_rcws_F",300,100,150],							//IFV-6c Panther
@@ -112,6 +122,9 @@ heavy_vehicles = [
 	["BWA3_Puma_Fleck",300,225,150],									//IFV Puma
 	["RHS_M2A3_BUSKIII_wd",300,250,175],								//M2A3 (Busk III)
 	["B_APC_Tracked_01_AA_F",300,250,175],								//IFV-6a Cheetah
+	["I_LT_01_AA_F",300,250,175],										//AWC 302 Nyx (AA)
+	["I_LT_01_AT_F",300,250,175],										//AWC 302 Nyx (AT)
+	["I_LT_01_cannon_F",300,250,175],									//AWC 302 Nyx (Cannon)
 	["RHS_M6_wd",300,250,175],											//M6A2
 	["B_MBT_01_cannon_F",400,300,200],									//M2A1 Slammer
 	["I_MBT_03_cannon_F",400,300,200],									//MBT-52 Kuma
@@ -119,6 +132,8 @@ heavy_vehicles = [
 	["B_MBT_01_TUSK_F",500,350,225],									//M2A4 Slammer UP
 	["rhsusf_m1a2sep1tuskiiwd_usarmy",500,400,250],						//M1A2SEPv1 (Tusk II)
 	["BWA3_Leopard2A6M_Fleck",500,400,250],								//MBT Leopard 2A6M
+	["B_AFV_Wheeled_01_cannon_F",500,500,250],							//Rhino MGS
+	["B_AFV_Wheeled_01_up_cannon_F",550,550,250],						//Rhino MGS UP
 	["B_MBT_01_arty_F",600,1250,300],									//M4 Scorcher
 	["rhsusf_m109_usarmy",600,1250,300],								//M109A6
 	["B_MBT_01_mlrs_F",800,1750,400]									//M5 Sandstorm MLRS
@@ -286,17 +301,6 @@ support_vehicles = [
 	["B_Slingload_01_Repair_F",275,0,0],								//Huron Repair
 	["B_Slingload_01_Fuel_F",75,0,200],									//Huron Fuel
 	["B_Slingload_01_Ammo_F",75,200,0]									//Huron Ammo
-];
-
-// All the UAVs must be declared here, otherwise there shall be UAV controlling issues. Namely: you won't be able to control them.
-uavs = [
-	"B_UAV_01_F",														//AR-2 Darter
-	"B_UGV_01_F",														//UGV Stomper
-	"B_UGV_01_rcws_F",													//UGV Stomper (RCWS)
-	"B_UAV_02_dynamicLoadout_F",										//MQ-4A Greyhawk
-	"B_T_UAV_03_dynamicLoadout_F",										//MQ-12 Falcon
-	"B_UAV_05_F",														//UCAV Sentinel
-	"B_UAV_06_F"														//AL-6 Pelican
 ];
 
 // Pre-made squads for the commander build menu. These shouldn't exceed 10 members.

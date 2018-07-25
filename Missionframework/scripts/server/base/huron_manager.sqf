@@ -16,7 +16,7 @@ while { true } do {
 	if ( firstloop && !isNull _savedhuron ) then {
 		huron = _savedhuron;
 	} else {
-		huron = huron_typename createVehicle (getposATL huronspawn);
+		huron = huron_typename createVehicle [(getposATL huronspawn) select 0, (getposATL huronspawn) select 1, ((getposATL huronspawn) select 2) + 0.2];
 		huron enableSimulationGlobal false;
 		huron allowdamage false;
 		huron setDir (getDir huronspawn);
@@ -27,10 +27,12 @@ while { true } do {
 
 	huron AnimateDoor ["Door_rear_source", 1, true];
 	publicVariable "huron";
-	clearWeaponCargoGlobal huron;
-	clearMagazineCargoGlobal huron;
-	clearItemCargoGlobal huron;
-	clearBackpackCargoGlobal huron;
+	if(KP_liberation_clear_cargo) then {
+		clearWeaponCargoGlobal huron;
+		clearMagazineCargoGlobal huron;
+		clearItemCargoGlobal huron;
+		clearBackpackCargoGlobal huron;
+	};
 	huron setDamage 0;
 	sleep 0.5;
 	huron enableSimulationGlobal true;

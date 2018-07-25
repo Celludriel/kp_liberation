@@ -1,5 +1,17 @@
 class Params
 {
+	class LoadSaveParams {
+		title = $STR_PARAMS_LOADSAVEPARAMS;
+		values[] = { 0, 1, 2 };
+		texts[] = { $STR_PARAMS_LOADSAVEPARAMS_SAVE, $STR_PARAMS_LOADSAVEPARAMS_LOAD, $STR_PARAMS_LOADSAVEPARAMS_SELECTED };
+		default = 1;
+	};
+	class Spacer0 {
+		title = "";
+		values[] = { "" };
+		texts[] = { "" };
+		default = "";
+	};
 	class MissionOptions {
 		title = $STR_PARAMS_MISSIONOPTIONS;
 		values[] = { "" };
@@ -64,13 +76,13 @@ class Params
 		title = $STR_PARAM_AUTODANGER;
 		values[] = {1,0};
 		texts[] = { $STR_PARAMS_ENABLED, $STR_PARAMS_DISABLED };
-		default = 0;
+		default = 1;
 	};
 	class DayDuration {
 		title = $STR_PARAMS_DAYDURATION;
 		values[] = {48, 24, 16, 12, 8, 6, 4, 3, 2, 1};
 		texts[] = {"0.5","1","1.5","2","3","4","6","8","12","24"};
-		default = 6;
+		default = 4;
 	};
 	class ShorterNights {
 		title = $STR_SHORTER_NIGHTS_PARAM;
@@ -104,67 +116,51 @@ class Params
 	};
 	class ReviveMode {
 		title = $STR_A3_ReviveMode;
-		isGlobal = 1;
-		values[] = {-100,0,1};
-		texts[] = {$STR_A3_MissionDefault, $STR_A3_Disabled, $STR_A3_EnabledForAllPlayers};
+		values[] = {0,1};
+		texts[] = {$STR_A3_Disabled, $STR_A3_EnabledForAllPlayers};
 		default = 1;
-		function = "bis_fnc_paramReviveMode";
 	};
 	class ReviveDuration {
 		title = $STR_A3_ReviveDuration;
-		isGlobal = 1;
-		values[] = {-100,6,8,10,12,15,20,25,30};
-		texts[] = {$STR_A3_MissionDefault,6,8,10,12,15,20,25,30};
+		values[] = {6,8,10,12,15,20,25,30};
+		texts[] = {6,8,10,12,15,20,25,30};
 		default = 6;
-		function = "bis_fnc_paramReviveDuration";
 	};
 	class ReviveRequiredTrait {
 		title = $STR_A3_RequiredTrait;
-		isGlobal = 1;
-		values[] = {-100,0,1};
-		texts[] = {$STR_A3_MissionDefault,$STR_A3_None,$STR_A3_Medic};
+		values[] = {0,1};
+		texts[] = {$STR_A3_None,$STR_A3_Medic};
 		default = 1;
-		function = "bis_fnc_paramReviveRequiredTrait";
 	};
 	class ReviveMedicSpeedMultiplier {
 		title = $STR_A3_RequiredTrait_MedicSpeedMultiplier;
-		isGlobal = 1;
-		values[] = {-100,1,1.5,2,2.5,3};
-		texts[] = {$STR_A3_MissionDefault,"1x","1.5x","2x","2.5x","3x"};
+		values[] = {1,1.5,2,2.5,3};
+		texts[] = {"1x","1.5x","2x","2.5x","3x"};
 		default = 1;
-		function = "bis_fnc_paramReviveMedicSpeedMultiplier";
 	};
 	class ReviveRequiredItems {
 		title = $STR_A3_RequiredItems;
-		isGlobal = 1;
-		values[] = {-100,0,1,2};
-		texts[] = {$STR_A3_MissionDefault,$STR_A3_None,$STR_A3_Medikit,$STR_A3_FirstAidKitOrMedikit};
+		values[] = {0,1,2};
+		texts[] = {$STR_A3_None,$STR_A3_Medikit,$STR_A3_FirstAidKitOrMedikit};
 		default = 1;
-		function = "bis_fnc_paramReviveRequiredItems";
 	};
 	class UnconsciousStateMode {
 		title = $STR_A3_IncapacitationMode;
-		isGlobal = 1;
-		values[] = {-100,0,1,2};
-		texts[] = {$STR_A3_MissionDefault,$STR_A3_Basic,$STR_A3_Advanced,$STR_A3_Realistic};
+		values[] = {0,1,2};
+		texts[] = {$STR_A3_Basic,$STR_A3_Advanced,$STR_A3_Realistic};
 		default = 0;
-		function = "bis_fnc_paramReviveUnconsciousStateMode";
 	};
 	class ReviveBleedOutDuration {
 		title = $STR_A3_BleedOutDuration;
-		isGlobal = 1;
-		values[] = {-100,10,15,20,30,45,60,90,180};
-		texts[] = {$STR_A3_MissionDefault,10,15,20,30,45,60,90,180};
+		values[] = {10,15,20,30,45,60,90,180};
+		texts[] = {10,15,20,30,45,60,90,180};
 		default = 180;
-		function = "bis_fnc_paramReviveBleedOutDuration";
 	};
 	class ReviveForceRespawnDuration {
 		title = $STR_A3_ForceRespawnDuration;
-		isGlobal = 1;
-		values[] = {-100,3,4,5,6,7,8,9,10};
-		texts[] = {$STR_A3_MissionDefault,3,4,5,6,7,8,9,10};
+		values[] = {3,4,5,6,7,8,9,10};
+		texts[] = {3,4,5,6,7,8,9,10};
 		default = 10;
-		function = "bis_fnc_paramReviveForceRespawnDuration";
 	};
 	class Spacer2 {
 		title = "";
@@ -177,12 +173,6 @@ class Params
 		values[] = { "" };
 		texts[] = { "" };
 		default = "";
-	};
-	class AceEnable {
-		title = $STR_PARAMS_ACE_ENABLE;
-		values[] = { 0, 1 };
-		texts[] = { $STR_PARAMS_DISABLED, $STR_PARAMS_ENABLED };
-		default = 0;
 	};
 	class Fatigue {
 		title = $STR_PARAMS_FATIGUE;
@@ -226,13 +216,6 @@ class Params
 		texts[] = {$STR_PARAMS_DISABLED, $STR_PARAMS_ENABLED};
 		default = 1;
 	};
-	// Arty Supp deactivated for now
-	/*class SuppMod {
-		title = $STR_PARAMS_SUPPMOD;
-		values[] = {0, 1, 2, 3};
-		texts[] = {$STR_PARAMS_DISABLED, $STR_PARAMS_COMMANDER, $STR_PARAMS_WHITELISTONLY, $STR_PARAMS_EVERYONE};
-		default = 0;
-	};*/
 	class TeamkillPenalty {
 		title = $STR_PARAM_TEAMKILL_PENALTY;
 		values[] = {1,0};
@@ -250,6 +233,12 @@ class Params
 		values[] = {1,5,10,15,20,30,0};
 		texts[] = { $STR_HALO_PARAM1, $STR_HALO_PARAM2, $STR_HALO_PARAM3, $STR_HALO_PARAM4, $STR_HALO_PARAM5, $STR_HALO_PARAM6, $STR_PARAMS_DISABLED };
 		default = 0;
+	};
+	class ClearCargo {
+		title = $STR_PARAM_CLEAR_CARGO;
+		values[] = {1,0};
+		texts[] = { $STR_PARAMS_ENABLED, $STR_PARAMS_DISABLED };
+		default = 1;
 	};
 	class Spacer3 {
 		title = "";

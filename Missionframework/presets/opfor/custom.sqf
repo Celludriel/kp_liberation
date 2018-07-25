@@ -30,7 +30,7 @@ opfor_mrap = "O_MRAP_02_F";												//Ifrit
 opfor_mrap_armed = "O_MRAP_02_hmg_F";									//Ifrit (HMG)
 opfor_transport_helo = "O_Heli_Transport_04_bench_F";					//Mi-290 Taru (Bench)
 opfor_transport_truck = "O_Truck_03_covered_F";							//Tempest Transport (Covered)
-opfor_ammobox_transport = "O_Truck_03_transport_F";						//Tempest Transport (Open) -> Has to be able to transport resource crates
+opfor_ammobox_transport = "O_Truck_03_transport_F";						//Tempest Transport (Open) -> Has to be able to transport resource crates!
 opfor_fuel_truck = "O_Truck_03_fuel_F";									//Tempest Fuel
 opfor_ammo_truck = "O_Truck_03_ammo_F";									//Tempest Ammo
 opfor_fuel_container = "Land_Pod_Heli_Transport_04_fuel_F";				//Taru Fuel Pod
@@ -64,17 +64,22 @@ opfor_vehicles = [
 	"O_MRAP_02_hmg_F",													//Ifrit (HMG)
 	"O_MRAP_02_hmg_F",													//Ifrit (GMG)
 	"O_MRAP_02_gmg_F",													//Ifrit (GMG)
+	"O_LSV_02_AT_F",													//Qilin (AT)
+	"O_APC_Tracked_02_cannon_F",										//BTR-K Kamysh
 	"O_APC_Tracked_02_cannon_F",										//BTR-K Kamysh
 	"O_APC_Tracked_02_AA_F",											//ZSU-39 Tigris
 	"O_APC_Tracked_02_AA_F",											//ZSU-39 Tigris
 	"O_MBT_02_cannon_F",												//T-100 Varsuk
-	"O_MBT_02_cannon_F"													//T-100 Varsuk
+	"O_MBT_02_cannon_F",												//T-100 Varsuk
+	"O_MBT_04_cannon_F",												//T-140 Angara
+	"O_MBT_04_command_F"												//T-140K Angara
 ];
 
 // All enemy vehicles that can spawn as sector defenders and patrols but at a lower enemy combat readiness (aggression levels).
 opfor_vehicles_low_intensity = [
 	"O_MRAP_02_hmg_F",													//Ifrit (HMG)
 	"O_MRAP_02_hmg_F",													//Ifrit (HMG)
+	"O_LSV_02_AT_F",													//Qilin (AT)
 	"O_APC_Wheeled_02_rcws_F",											//MSE-3 Marid 
 	"O_APC_Tracked_02_cannon_F"											//BTR-K Kamysh
 ];
@@ -84,13 +89,17 @@ opfor_battlegroup_vehicles = [
 	"O_MRAP_02_hmg_F",													//Ifrit (HMG)
 	"O_MRAP_02_gmg_F",													//Ifrit (GMG)
 	"O_MRAP_02_gmg_F",													//Ifrit (GMG)
+	"O_LSV_02_AT_F",													//Qilin (AT)
 	"O_Truck_03_transport_F",											//Tempest Transport
 	"O_Truck_03_covered_F",												//Tempest Transport (Covered)
+	"O_APC_Tracked_02_cannon_F",										//BTR-K Kamysh
 	"O_APC_Tracked_02_cannon_F",										//BTR-K Kamysh
 	"O_APC_Tracked_02_AA_F",											//ZSU-39 Tigris
 	"O_APC_Tracked_02_AA_F",											//ZSU-39 Tigris
 	"O_MBT_02_cannon_F",												//T-100 Varsuk
 	"O_MBT_02_cannon_F",												//T-100 Varsuk
+	"O_MBT_04_cannon_F",												//T-140 Angara
+	"O_MBT_04_command_F",												//T-140K Angara
 	"O_Heli_Light_02_dynamicLoadout_F",									//Po-30 Orca (Armed)
 	"O_Heli_Light_02_dynamicLoadout_F",									//Po-30 Orca (Armed)
 	"O_Heli_Transport_04_bench_F",										//Mi-290 Taru (Bench)
